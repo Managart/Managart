@@ -155,7 +155,7 @@ a:-webkit-any-link {
     margin-bottom: 50px;
   }
 
-  .shopCar{
+  .shopCar {
     width: 18px;
     height: 18px;
   }
@@ -165,10 +165,9 @@ a:-webkit-any-link {
     justify-content: center;
   }
 
-  .navBar li{
+  .navBar li {
     font-size: 12px;
   }
-  
 
   .headerLogo {
     max-width: 45px;
