@@ -49,6 +49,28 @@ a:-webkit-any-link {
   top: 250px;
 }
 
+@media (max-width: 360px) {
+  .header {
+    width: 360px;
+  }
+  .menu {
+    font-size: 16px;
+    gap: 10px;
+  }
+  .pageCover {
+    max-width: 100vw;
+    max-height: 500px;
+    background-size: 1000px;
+    background-position: -550px;
+  }
+
+  .pageTitle {
+    font-size: 40px;
+    left: 50px;
+    top: 100px;
+  }
+}
+
 /* Porfolio */
 
 .portfolioHeader {
@@ -116,6 +138,78 @@ a:-webkit-any-link {
   grid-area: 2 / 3 / 3 / 4;
   height: 210px;
   width: 373px;
+}
+
+@media (max-width: 360px) {
+  .portfolioHeader {
+    max-width: 360px;
+    padding: 20px;
+  }
+
+  .searchInput {
+    height: 17px;
+    width: 100px;
+  }
+
+  .infoHeader {
+    margin-bottom: 50px;
+  }
+
+  .shopCar{
+    width: 18px;
+    height: 18px;
+  }
+
+  .navBar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navBar li{
+    font-size: 12px;
+  }
+  
+
+  .headerLogo {
+    max-width: 45px;
+    max-height: 50px;
+    margin-left: 0;
+  }
+
+  .imageContainer {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 0.1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+  }
+
+  .image1 {
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    height: 175px;
+  }
+  .image2 {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 100%;
+    height: 175px;
+  }
+  .image3 {
+    grid-area: 2 / 1 / 3 / 3;
+    width: 100%;
+    height: 115px;
+  }
+  .image4 {
+    grid-area: 3 / 1 / 4 / 2;
+    width: 100%;
+    height: 175px;
+  }
+  .image5 {
+    grid-area: 3 / 2 / 4 / 3;
+    width: 100%;
+    height: 175px;
+  }
 }
 
 /* Ocean Collection */
