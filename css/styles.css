@@ -1,9 +1,51 @@
+@keyframes salto {
+  0% {
+    bottom: 0px;
+  }
+  10% {
+    bottom: 0px;
+  }
+  20% {
+    bottom: 20px;
+  }
+  30% {
+    bottom: 0px;
+  }
+  40% {
+    bottom: 30px;
+  }
+  50% {
+    bottom: 0px;
+  }
+  60% {
+    bottom: 20px;
+  }
+  70% {
+    bottom: 0px;
+  }
+  80% {
+    bottom: 10px;
+  }
+  90% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+@keyframes flip_animation {
+  0% {
+    transform: translateZ(0) rotateY(0);
+  }
+  100% {
+    transform: translateZ(160px) rotateY(180deg);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 a:-webkit-any-link {
   color: white;
 }
@@ -11,8 +53,6 @@ a:-webkit-any-link {
 html {
   background-color: black;
 }
-
-/* Home */
 
 .header {
   align-items: center;
@@ -24,24 +64,30 @@ html {
 
 .menu {
   color: white;
-  display: flex;
   font-family: "Inter", sans-serif;
   font-size: 30px;
   font-weight: 400;
+}
+.menu .menuItem:hover {
+  animation: slide 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+.menu ul {
+  display: flex;
   gap: 40px;
+}
+.menu li {
   list-style: none;
 }
 
 .pageCover {
-  background-image: url("../img/Rectangle\ 1.png");
+  background-image: url("../img/Rectangle 1.png");
   background-repeat: no-repeat;
   background-size: 100%;
   height: 744px;
   position: absolute;
   width: 100%;
 }
-
-.pageTitle {
+.pageCover h1 {
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 90px;
@@ -50,8 +96,6 @@ html {
   position: absolute;
   top: 250px;
 }
-
-/* Porfolio */
 
 .portfolioHeader {
   background-color: black;
@@ -101,70 +145,78 @@ html {
   padding: 105px;
   padding-top: 20px;
 }
-
-.container1 {
-  grid-area: 1 / 1 / 2 / 2;
+.imageContainer .container1 {
+  grid-area: 1/1/2/2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-
-.container2 {
-  grid-area: 2 / 1 / 3 / 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.container3 {
-  grid-area: 1 / 2 / 3 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.container4 {
-  grid-area: 1 / 3 / 2 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.container5 {
-  grid-area: 2 / 3 / 3 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.image1 {
+.imageContainer .container1 .image1 {
   height: 210px;
   width: 373px;
 }
-
-.image2 {
+.imageContainer .container1 .image1:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.imageContainer .container2 {
+  grid-area: 2/1/3/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.imageContainer .container2 .image2 {
   height: 210px;
   width: 373px;
 }
-
-.image3 {
+.imageContainer .container2 .image2:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.imageContainer .container3 {
+  grid-area: 1/2/3/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.imageContainer .container3 .image3 {
   height: 530px;
   width: 375px;
 }
-
-.image4 {
+.imageContainer .container3 .image3:hover {
+  position: relative;
+  animation-name: salto;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+}
+.imageContainer .container4 {
+  grid-area: 1/3/2/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.imageContainer .container4 .image4 {
   height: 210px;
   width: 373px;
 }
-
-.image5 {
+.imageContainer .container4 .image4:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.imageContainer .container5 {
+  grid-area: 2/3/3/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.imageContainer .container5 .image5 {
   height: 210px;
   width: 373px;
+}
+.imageContainer .container5 .image5:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 .addToBagPortfolio {
@@ -176,14 +228,11 @@ html {
   justify-content: center;
   width: 110px;
 }
-
 .addToBagPortfolio p {
   color: blue;
   font-size: 10px;
   text-decoration: underline;
 }
-
-/* Ocean Collection */
 
 .nameCollection {
   color: white;
@@ -202,57 +251,59 @@ html {
   grid-row-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 0.1fr 1fr;
-  padding: 50px 116px;
+  padding: 20px 116px;
 }
-
+.collectionContainer .collectionDescription {
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  font-weight: 400;
+  grid-area: 1/2/2/3;
+  justify-content: center;
+}
 .collectionContainer img {
   max-height: 400px;
 }
-
 .collectionContainer h3 {
   font-size: 30px;
   font-weight: 400;
 }
-
 .collectionContainer p {
   font-size: 20px;
   font-weight: 400;
 }
-
-.collectionDescription {
-  align-items: center;
-  display: flex;
-  font-size: 20px;
-  font-weight: 400;
-  grid-area: 1 / 2 / 2 / 3;
-  justify-content: center;
-}
-
-.product1 {
+.collectionContainer .product1 {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 2/1/3/2;
   justify-content: center;
 }
-
-.product2 {
+.collectionContainer .product1:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.collectionContainer .product2 {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2/2/3/3;
   justify-content: center;
 }
-
-.product3 {
+.collectionContainer .product2:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.collectionContainer .product3 {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  grid-area: 2 / 3 / 3 / 4;
+  grid-area: 2/3/3/4;
   justify-content: center;
+}
+.collectionContainer .product3:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 .addToBag {
@@ -267,14 +318,11 @@ html {
   position: relative;
   width: 110px;
 }
-
 .addToBag p {
   color: blue;
   font-size: 10px;
   text-decoration: underline;
 }
-
-/* Shop */
 
 .shopContainer {
   background-color: black;
@@ -284,8 +332,7 @@ html {
   padding: 30px 105px;
   align-items: center;
 }
-
-.productInfo {
+.shopContainer .productInfo {
   color: white;
   display: flex;
   font-family: "Inter", sans-serif;
@@ -293,30 +340,25 @@ html {
   margin-top: 30px;
   width: 90%;
 }
-
-.productInfo p {
+.shopContainer .productInfo p {
   font-size: 40px;
   font-weight: 400;
 }
-
-.productInfo h2 {
+.shopContainer .productInfo h2 {
   font-size: 30px;
   font-weight: 400;
 }
-
-.productInfo img {
+.shopContainer .productInfo img {
   height: 550px;
   width: 430px;
 }
-
-.productPrice {
+.shopContainer .productInfo .productPrice {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin-top: 100px;
 }
-
-.buyButton {
+.shopContainer .productInfo .buyButton {
   border-radius: 60px;
   font-size: 30px;
   font-weight: 400;
@@ -326,21 +368,17 @@ html {
   right: 140px;
   width: 230px;
 }
-
-.socialMedia {
+.shopContainer .socialMedia {
   align-self: flex-end;
   display: flex;
   justify-content: center;
 }
-
-.socialMedia img {
+.shopContainer .socialMedia img {
   bottom: 110px;
   object-fit: contain;
   position: relative;
   right: 300px;
 }
-
-/* Others */
 
 .othersPortfolioHeader {
   color: white;
@@ -350,8 +388,7 @@ html {
   padding: 105px;
   padding-top: 30px;
 }
-
-.othersMenu {
+.othersPortfolioHeader .othersMenu {
   display: flex;
   font-family: "Inter", sans-serif;
   font-size: 30px;
@@ -360,7 +397,6 @@ html {
   list-style: none;
 }
 
-
 .othersContainer {
   display: flex;
   gap: 190px;
@@ -368,8 +404,7 @@ html {
   padding-top: 0;
   width: 100vw;
 }
-
-.asideMenu ul {
+.othersContainer .asideMenu ul {
   color: white;
   display: flex;
   flex-direction: column;
@@ -378,40 +413,36 @@ html {
   font-weight: 400;
   gap: 30px;
 }
-
-.asideMenu li {
+.othersContainer .asideMenu li {
   list-style: none;
 }
-
-.asideMenu li:hover {
+.othersContainer .asideMenu li:hover {
   background-color: #d9d9d9;
   border-radius: 20px;
   padding: 10px;
 }
-
-.cardContainer {
+.othersContainer .cardContainer {
   display: flex;
   gap: 75px;
 }
-
-.card {
+.othersContainer .cardContainer .card {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-
-.productImg {
+.othersContainer .cardContainer .card .productImg {
   height: 330px;
   width: 237px;
 }
-
-.cardInfo {
+.othersContainer .cardContainer .card .productImg:hover {
+  animation: flip_animation 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+.othersContainer .cardContainer .card .cardInfo {
   display: flex;
   color: white;
   gap: 20px;
 }
-
-.cardInfo h2 {
+.othersContainer .cardContainer .card .cardInfo h2 {
   font-family: "Inter", sans-serif;
   font-size: 30px;
   font-weight: 400;
@@ -428,9 +459,13 @@ html {
   .header {
     width: 360px;
   }
-  .menu {
+  .menu ul {
     font-size: 16px;
     gap: 10px;
+  }
+  .shopCar {
+    width: 18px;
+    height: 18px;
   }
   .pageCover {
     max-width: 100vw;
@@ -438,47 +473,34 @@ html {
     background-size: 1000px;
     background-position: -550px;
   }
-
-  .pageTitle {
+  .pageCover h1 {
     font-size: 40px;
     left: 50px;
     top: 100px;
   }
-
   .portfolioHeader {
     max-width: 360px;
     padding: 20px;
   }
-
   .searchInput {
     height: 17px;
     width: 100px;
   }
-
   .infoHeader {
     margin-bottom: 50px;
   }
-
-  .shopCar {
-    width: 18px;
-    height: 18px;
-  }
-
   .navBar {
     display: flex;
     justify-content: center;
   }
-
   .navBar li {
     font-size: 12px;
   }
-
   .headerLogo {
     max-width: 45px;
     max-height: 50px;
     margin-left: 0;
   }
-
   .imageContainer {
     padding: 20px;
     display: grid;
@@ -487,87 +509,154 @@ html {
     grid-column-gap: 10px;
     grid-row-gap: 20px;
   }
-
-  .container1 {
-    grid-area: 1 / 1 / 2 / 2;
+  .imageContainer .container1 {
+    grid-area: 1/1/2/2;
   }
-  .container2 {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-  .container3 {
-    grid-area: 3 / 1 / 4 / 3;
-  }
-  .container4 {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .container5 {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-
-  .image1 {
+  .imageContainer .container1 .image1 {
     width: 100%;
     height: 80px;
   }
-  .image2 {
+  .imageContainer .container2 {
+    grid-area: 2/1/3/2;
+  }
+  .imageContainer .container2 .image2 {
     width: 100%;
     height: 80px;
   }
-  .image3 {
+  .imageContainer .container3 {
+    grid-area: 3/1/4/3;
+  }
+  .imageContainer .container3 .image3 {
     width: 50%;
     height: 100%;
   }
-  .image4 {
+  .imageContainer .container4 {
+    grid-area: 1/2/2/3;
+  }
+  .imageContainer .container4 .image4 {
     width: 100%;
     height: 80px;
   }
-
-  .image5 {
+  .imageContainer .container5 {
+    grid-area: 2/2/3/3;
+  }
+  .imageContainer .container5 .image5 {
     width: 100%;
     height: 80px;
+  }
+  .othersPortfolioHeader {
+    padding: 20px;
   }
   .addToBagPortfolio {
     height: 20px;
     width: 60px;
   }
-  .productInfo{
-    flex-direction: column;
-  }
-  .productInfo img {
-    height: 390px;
-    width: 250px;
-  }
-
-  .shopContainer{
+  .shopContainer {
     padding: 40px;
     padding-top: 0;
     align-items: center;
   }
-
-  .productPrice{
-    margin-top: 20px;
+  .shopContainer .productInfo {
+    flex-direction: column;
   }
-  .productInfo p {
+  .shopContainer .productInfo img {
+    height: 390px;
+    width: 250px;
+  }
+  .shopContainer .productInfo p {
     font-size: 20px;
     font-weight: 400;
   }
-  
-  .productInfo h2 {
+  .shopContainer .productInfo h2 {
     font-size: 10px;
     font-weight: 400;
   }
-  .buyButton {
+  .shopContainer .productInfo .productPrice {
+    margin-top: 20px;
+  }
+  .shopContainer .productInfo .buyButton {
     font-size: 10px;
     height: 27px;
     bottom: 160px;
     left: 140px;
     width: 113px;
   }
-
-  .socialMedia img {
+  .shopContainer .socialMedia img {
     bottom: 150px;
     object-fit: contain;
     position: relative;
     right: 60px;
   }
-  
+  .collectionContainer {
+    padding: 40px;
+    padding-top: 0;
+    align-items: center;
+    grid-template-columns: repeat(2, 0.2fr);
+    grid-template-rows: 0.1fr repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+  .collectionContainer .collectionDescription {
+    grid-area: 1/1/2/3;
+  }
+  .collectionContainer .product1 {
+    grid-area: 2/1/3/2;
+  }
+  .collectionContainer .product1 img {
+    width: 120px;
+    height: 200px;
+  }
+  .collectionContainer .product2 {
+    grid-area: 2/2/3/3;
+  }
+  .collectionContainer .product2 img {
+    width: 120px;
+    height: 200px;
+  }
+  .collectionContainer .product3 {
+    grid-area: 3/1/4/2;
+  }
+  .collectionContainer .product3 img {
+    width: 120px;
+    height: 200px;
+  }
+  .collectionContainer .addToBag {
+    bottom: 0px;
+    height: 30px;
+    left: 0px;
+    width: 110px;
+  }
+  .collectionContainer .addToBag p {
+    color: blue;
+    font-size: 10px;
+    text-decoration: underline;
+  }
+  .nameCollection {
+    font-size: 10px;
+    margin-right: 0px;
+  }
+  .othersContainer {
+    gap: 20px;
+    padding: 0;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .othersContainer .asideMenu {
+    position: absolute;
+    bottom: -40px;
+  }
+  .othersContainer .asideMenu ul {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .othersContainer .cardContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 66%;
+  }
 }
+
+/*# sourceMappingURL=styles.css.map */

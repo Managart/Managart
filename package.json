@@ -1,0 +1,19 @@
+{
+  "name": "preentrega2-carolinacastillo",
+  "version": "1.0.0",
+  "description": "Dispositivos funcionales:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Managart@github.com/Managart/PreEntrega2-CarolinaCastillo.git.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Managart/PreEntrega2-CarolinaCastillo.git/issues"
+  },
+  "homepage": "https://github.com/Managart/PreEntrega2-CarolinaCastillo.git#readme"
+}
