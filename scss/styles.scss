@@ -1,6 +1,6 @@
-@import "./partials/colores";
-@import "./partials/espaciados";
-@import "./partials/tipografias";
+@import "./partials/_colores";
+@import "./partials/_espaciados";
+@import "./partials/_tipografias";
 @keyframes salto {
   0% {
     bottom: 0px;
@@ -470,7 +470,7 @@ html {
   gap: $spacing_medium;
   justify-content: center;
 }
-@media (min-width: 400px){
+@media (max-width: 400px){
   .header {
     width: 100vw;
   }

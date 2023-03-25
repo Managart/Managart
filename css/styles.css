@@ -46,6 +46,7 @@
   margin: 0;
   padding: 0;
 }
+
 a:-webkit-any-link {
   color: white;
 }
@@ -375,7 +376,8 @@ html {
 }
 .shopContainer .socialMedia img {
   bottom: 110px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: relative;
   right: 300px;
 }
@@ -583,7 +585,8 @@ html {
   }
   .shopContainer .socialMedia img {
     bottom: 150px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     position: relative;
     right: 60px;
   }
@@ -657,6 +660,4 @@ html {
     align-items: center;
     width: 66%;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
